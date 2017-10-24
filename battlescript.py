@@ -47,19 +47,20 @@ def battle():
             print("\nMake a proper selection!")
             time.sleep(1)
             continue
+            
+        if enemy.get_hp() > 0:
+            enemy_dmg = enemy.deal_dmg()
+            player.take_dmg(enemy_dmg)
 
-        enemy_dmg = enemy.deal_dmg()
-        player.take_dmg(enemy_dmg)
+            print("\nThe Enemy Attacked for {} points of damage!".format(enemy_dmg))
+            time.sleep(1)
+            print("==================")
+            print("Enemy HP: {}/{}".format(enemy.get_hp(), enemy.max_hp))
+            print("{} HP: {}/{}".format(player.name, player.get_hp(), player.max_hp))
+            print("Player Stamina: {}/{}".format(player.get_sta(), player.max_sta))
+            time.sleep(1)
 
-        print("\nThe Enemy Attacked for {} points of damage!".format(enemy_dmg))
-        time.sleep(1)
-        print("==================")
-        print("Enemy HP: {}/{}".format(enemy.get_hp(), enemy.max_hp))
-        print("{} HP: {}/{}".format(player.name, player.get_hp(), player.max_hp))
-        print("Player Stamina: {}/{}".format(player.get_sta(), player.max_sta))
-        time.sleep(1)
-
-        if enemy.get_hp() == 0:
+        elif enemy.get_hp() == 0:
             print("You have defeated the Enemy!")
             running = False
             player.exp_gain(enemy.exp)
