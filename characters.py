@@ -86,10 +86,10 @@ class Person:
 
 
 # Creating Player Abilities
-punch = Ability("Punch", 20, 5, "Punch them!")
-strike = Ability("Lightning Strike", 30, 10, "black")
-thrash = Ability("Thrash", 50, 18, "black")
-slam = Ability("Slam", 65, 22, "black")
+punch = Ability("Punch", 20, 5, "You pull back and throw a haymaker!")
+strike = Ability("Lightning Strike", 30, 10, "You quickly strike before the enemy has the chance to attack")
+thrash = Ability("Thrash", 50, 18, "You grab the enemy and thrash them around until they break free")
+slam = Ability("Slam", 65, 22, "You slam the enemy into the ground!")
 
 # List containing our abilities
 player_abilities = [punch, strike, thrash, slam]
